@@ -1,0 +1,10 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Allow anyone to read and write scores for this beginner demo
+    // In a real app, you would add authentication!
+    match /scores/{scoreId} {
+      allow read, write: if true;
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "entities": {
+    "Score": {
+      "title": "Student Score",
+      "description": "Represents a student's score in a learning activity.",
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "The name of the student."
+        },
+        "score": {
+          "type": "number",
+          "description": "The score achieved by the student."
+        },
+        "timestamp": {
+          "type": "string",
+          "format": "date-time",
+          "description": "When the score was recorded."
+        }
+      },
+      "required": ["name", "score", "timestamp"]
+    }
+  },
+  "firestore": {
+    "/scores/{scoreId}": {
+      "schema": "Score",
+      "description": "Collection of student scores."
+    }
+  }
+}
